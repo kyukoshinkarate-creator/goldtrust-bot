@@ -66,13 +66,10 @@ async def get_melted_gold_price():
             MELTED_GOLD_URL
         )
 
-    # تبدیل قیمت ریالی به تومان
+    # تبدیل ریال به تومان (قیمت مثقال)
     price_toman_per_mesghal = price_rial_per_mesghal / 10
 
-    # هر مثقال معادل تقریبی 4.6083 گرم است
-    price_toman_per_gram = price_toman_per_mesghal / 4.6083
-
-    return round(price_toman_per_gram)
+    return round(price_toman_per_mesghal)
 
 
 async def get_all_prices():
