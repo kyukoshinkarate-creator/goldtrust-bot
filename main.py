@@ -14,6 +14,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+last_prices = None
 
 def format_price(price):
     return f"{price:,}"
@@ -25,6 +26,16 @@ async def send_price_report(application):
 
         dollar = prices["dollar"]
         gold = prices["melted_gold"]
+
+        global last_prices
+
+current_prices = (dollar, gold)
+
+if last_prices == current_prices:
+    logger.info("قیمت تغییر نکرده، پیام ارسال نشد.")
+    return
+
+last_prices = current_prices
 
         message = (
             "📊 قیمت لحظه‌ای بازار آزاد\n"
