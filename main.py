@@ -30,7 +30,7 @@ async def send_price_report(application):
             "📊 قیمت لحظه‌ای بازار آزاد\n"
             "━━━━━━━━━━━━━━\n"
             f"💵 دلار آزاد: {format_price(dollar)} تومان\n"
-            f"🟡 طلای آب‌شده هر گرم: {format_price(gold)} تومان\n"
+            f"🟡طلای آب‌شده هر مثقال: {format_price(gold)} تومان\n"
             "━━━━━━━━━━━━━━"
         )
 
