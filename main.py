@@ -25,6 +25,7 @@ async def send_price_report(application):
         
         if not (START_HOUR <= now.hour < END_HOUR):
     return
+
     prices = await get_all_prices()
 
         dollar = prices["dollar"]
