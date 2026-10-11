@@ -21,10 +21,11 @@ def format_price(price):
 
 async def send_price_report(application):
     try:
+       now = datetime.now()
+        
         if not (START_HOUR <= now.hour < END_HOUR):
     return
     prices = await get_all_prices()
-        now = datetime.now()
 
         dollar = prices["dollar"]
         gold = prices["melted_gold"]
