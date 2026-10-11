@@ -7,3 +7,5 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 PRICE_INTERVAL = int(os.getenv("PRICE_INTERVAL", "600"))
+START_HOUR = 8
+END_HOUR = 23
