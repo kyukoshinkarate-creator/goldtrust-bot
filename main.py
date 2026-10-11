@@ -4,7 +4,7 @@ from datetime import datetime
 
 from telegram.ext import Application
 
-from config import BOT_TOKEN, CHANNEL_ID, PRICE_INTERVAL
+from config import BOT_TOKEN, CHANNEL_ID, PRICE_INTERVAL, START_HOUR, END_HOUR
 from price_service import get_all_prices
 
 
@@ -22,6 +22,10 @@ def format_price(price):
 async def send_price_report(application):
     try:
         prices = await get_all_prices()
+        now = datetime.now()
+
+if not (START_HOUR <= now.hour < END_HOUR):
+    return
 
         dollar = prices["dollar"]
         gold = prices["melted_gold"]
